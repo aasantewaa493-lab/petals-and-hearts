@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #7026a6;
+  --brand-deep: #43135f;
+  --brand-royal: #8b3fc7;
+  --lavender: #f2e8fa;
+  --lavender-pale: #faf6fd;
+  --white: #ffffff;
+  --warm-white: #fffcff;
+  --ink: #241c29;
+  --muted: #716776;
+  --border: #eae2ee;
+  --success: #237a50;
+  --warning: #a45a0a;
+  --danger: #b42335;
+  --radius: 1.25rem;
+  --shadow: 0 18px 50px rgba(67, 19, 95, 0.08);
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-royal: var(--brand-royal);
+  --color-lavender: var(--lavender);
+  --color-lavender-pale: var(--lavender-pale);
+  --color-warm: var(--warm-white);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
+  --shadow-soft: var(--shadow);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  background: var(--warm-white);
+  color: var(--ink);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+.font-serif {
+  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-royal);
+  outline-offset: 3px;
+}
+
+.container-page {
+  width: min(1180px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.pill {
+  border-radius: 999px;
+}
