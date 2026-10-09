@@ -137,6 +137,10 @@ export async function featuredProducts() {
 }
 
 export async function getStoreContent() {
-  const settings = await prisma.storeSettings.findUnique({ where: { id: "default" } });
-  return (settings?.data ?? {}) as Record<string, unknown>;
+  try {
+    const settings = await prisma.storeSettings.findUnique({ where: { id: "default" } });
+    return (settings?.data ?? {}) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
 }

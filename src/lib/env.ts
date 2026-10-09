@@ -1,3 +1,7 @@
+import { applyRuntimeEnv } from "@/lib/runtime-env";
+
+applyRuntimeEnv();
+
 function optional(name: string) {
   const value = process.env[name];
   return value && value.length > 0 ? value : undefined;

@@ -70,12 +70,14 @@ Catalogue products are **demo data**. Do not present them as live studio invento
 
 ## Production notes
 
+Vercel can build without dashboard env vars: the build creates and seeds a SQLite catalog. That file is ephemeral on serverless, so carts and orders will not persist across instances. For a real shop:
+
 1. Switch Prisma `provider` to `postgresql` and set `DATABASE_URL`.
-2. Set `PAYMENT_PROVIDER=paystack` and Paystack keys.
-3. Configure Resend for transactional email.
-4. Replace brand placeholders and product photography.
-5. Create a real administrator and disable the seed passwords.
-6. Deploy to Vercel or an equivalent Node host.
+2. Set `AUTH_SECRET` and `NEXT_PUBLIC_SITE_URL`.
+3. Set `PAYMENT_PROVIDER=paystack` and Paystack keys.
+4. Configure Resend for transactional email.
+5. Replace brand placeholders and product photography.
+6. Create a real administrator and disable the seed passwords.
 
 ## Money
 
